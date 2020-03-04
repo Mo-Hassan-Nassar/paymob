@@ -24,6 +24,7 @@ class PayMobServiceProvider extends ServiceProvider
      * Register any package services.
      *
      * @return void
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function register()
     {
@@ -31,5 +32,8 @@ class PayMobServiceProvider extends ServiceProvider
             return new PayMob();
         });
 
+        $this->app->make('Msh\PayMob\PayMobController');
+
+        include __DIR__.'/routes.php';
     }
 }

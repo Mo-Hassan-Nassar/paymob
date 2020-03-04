@@ -1,0 +1,42 @@
+{
+    "name": "msh/paymob",
+    "description": "A Package to help with PayMob integration",
+    "type": "library",
+    "keywords": [
+        "php",
+        "paymob",
+        "weaccept",
+        "gateway",
+        "online",
+        "payment",
+        "laravel"
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamed Sayed Hassan",
+            "email": "mohamedsayed88772@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Msh\\PayMob\\": "src/"
+        },
+        "classmap": [
+            "tests"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "msh\\Paymob\\PayMobServiceProvider"
+            ],
+            "aliases": {
+                "Msh": "msh\\Paymob\\Facades\\Paymob"
+            }
+        }
+    }
+}
